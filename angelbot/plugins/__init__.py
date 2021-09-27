@@ -1,0 +1,76 @@
+import datetime
+import time
+
+from angelbot import *
+from angelbot.config import Config
+from angelbot.helpers import *
+from angelbot.utils import *
+from angelbot.random_strings import *
+from angelbot.version import __angel__
+from angelbot.sql.gvar_sql import gvarstat
+from telethon import version
+
+
+ANGEL_USER = bot.me.first_name
+ForGo10God = bot.uid
+angel_mention = f"[{ANGEL_USER}](tg://user?id={ForGo10God})"
+angel_logo = "./angelbot/resources/pics/angelbot_logo.jpg"
+cjb = "./angelbot/resources/pics/cjb.jpg"
+restlo = "./angelbot/resources/pics/rest.jpeg"
+shuru = "./angelbot/resources/pics/shuru.jpg"
+shhh = "./angelbot/resources/pics/chup_madarchod.jpeg"
+hl = Config.HANDLER
+shl = Config.SUDO_HANDLER
+angel_ver = __angel__
+tel_ver = version.__version__
+
+async def get_user_id(ids):
+    if str(ids).isdigit():
+        userid = int(ids)
+    else:
+        userid = (await bot.get_entity(ids)).id
+    return userid
+
+sudos = Config.SUDO_USERS
+if sudos:
+    is_sudo = "True"
+else:
+    is_sudo = "False"
+
+abus = Config.ABUSE
+if abus == "ON":
+    abuse_m = "Enabled"
+else:
+    abuse_m ="Disabled"
+
+
+my_channel = Config.MY_CHANNEL or "Its_angelbot"
+my_group = Config.MY_GROUP or "angelbot_Chat"
+if "@" in my_channel:
+    my_channel = my_channel.replace("@", "")
+if "@" in my_group:
+    my_group = my_group.replace("@", "")
+
+chnl_link = "https://t.me/its_angelbot"
+angel_channel = f"[†hê Hêllẞø†]({chnl_link})"
+grp_link = "https://t.me/angelbot_Chat"
+angel_grp = f"[Hêllẞø† Group]({grp_link})"
+
+WELCOME_FORMAT = """**Use these fomats in your welcome note to make them attractive.**
+  {mention} :  To mention the user
+  {title} : To get chat name in message
+  {count} : To get group members
+  {first} : To use user first name
+  {last} : To use user last name
+  {fullname} : To use user full name
+  {userid} : To use userid
+  {username} : To use user username
+  {my_first} : To use my first name
+  {my_fullname} : To use my full name
+  {my_last} : To use my last name
+  {my_mention} : To mention myself
+  {my_username} : To use my username
+"""
+# will add more soon
+
+# angelbot
