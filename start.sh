@@ -12,5 +12,5 @@ echo """
 """
 rm -rf InVade
 git clone https://github.com/don1900/AngelUserbot
-cd AngleUserbot
+cd AngelUserbot
 python3 -m angelbot
